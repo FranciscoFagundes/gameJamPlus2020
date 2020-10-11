@@ -28,14 +28,14 @@ RectTransform:
   m_GameObject: {fileID: 4556194500651666761}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.019854419, y: 0.020461882, z: 0.020461882}
+  m_LocalScale: {x: 0.01633521, y: 0.01633521, z: 0.01633521}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.49, y: -3.46}
+  m_AnchoredPosition: {x: 4.1113005, y: -3.5034}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4556194500651666757
@@ -89,9 +89,12 @@ MonoBehaviour:
   canvas: {fileID: 0}
   battleManager: {fileID: 0}
   npcSprite: {fileID: 21300000, guid: 6fe40d94104dee043add0cbf67344f32, type: 3}
-  disabledSprite: {fileID: 21300000, guid: 63ea5c94a6c71d04e89f1bd4d0510e07, type: 3}
-  enabledSprite: {fileID: 21300000, guid: 750f9e0afd1e2e249a24ff390e41d342, type: 3}
+  disabledSprite: {fileID: 21300000, guid: e450f968e5ce6494b9b7cefba6f7969a, type: 3}
+  enabledSprite: {fileID: 21300000, guid: 81c7918ef1b6aee45a271d43785b136a, type: 3}
   imageComponent: {fileID: 0}
   canvasObject: {fileID: 0}
   battleManagerObject: {fileID: 0}
   myPositionOnArray: 0
+  active: 0
+  npcNumber: 0
+  npcCost: 3

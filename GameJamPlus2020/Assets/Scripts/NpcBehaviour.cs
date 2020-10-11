@@ -75,7 +75,7 @@ public class NpcBehaviour : MonoBehaviour
 
             if(goToDownBridge) 
             {
-                if (transform.position.y < -0.5f)
+                if (transform.position.y < -1.5f)
                 {
                     rb.MovePosition(transform.position + transform.up * Time.fixedDeltaTime * speed);
                 }

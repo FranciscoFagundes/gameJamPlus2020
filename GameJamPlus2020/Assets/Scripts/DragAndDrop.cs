@@ -31,6 +31,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 
     public bool active;
 
+    public int npcNumber;
+
+    public int npcCost;
+
 
     private void Awake()
     {
@@ -45,7 +49,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     
     void Update()
     {
-        if(battleManager.power < 3) {
+        if(battleManager.power < npcCost) {
             imageComponent.sprite = disabledSprite;
             active = false;
         }else {
@@ -68,16 +72,13 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor / 110;
             imageComponent.sprite = npcSprite;
             rectTransform.transform.localScale = new Vector3(0.011f,0.011f,0.011f);
-
         }
-        
-        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
         if(rectTransform.position.y > -1.4f && rectTransform.position.y < 1.8f  ) {
-            battleManager.SpawnNpc(rectTransform);
+            battleManager.SpawnNpc(rectTransform, npcNumber, npcCost);
             battleManager.AddCardToList(myPositionOnArray);
             Destroy(this.gameObject);
         }

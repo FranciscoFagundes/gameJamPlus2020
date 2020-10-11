@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BattleManager : MonoBehaviour
 {
 
-    public GameObject npc;
+    public GameObject[] npc;
 
     public float startPower;
     public float power;
@@ -16,7 +16,7 @@ public class BattleManager : MonoBehaviour
     public Image powerBar;
 
 
-    public GameObject[] cardDeck;
+    public GameObject[] cardDeck = new GameObject[4];
 
     public GameObject[] cardTable;
 
@@ -71,11 +71,11 @@ public class BattleManager : MonoBehaviour
     }
 
 
-    public void SpawnNpc(Transform spawnPlace) {
+    public void SpawnNpc(Transform spawnPlace, int npcNumber, int npcCost) {
 
-        if(power >= 3) {
-             Instantiate(npc, spawnPlace.position, Quaternion.identity);
-             power = power - 3.0f;
+        if(power >= npcCost) {
+             Instantiate(npc[npcNumber], spawnPlace.position, Quaternion.identity);
+             power = power - npcCost;
         }
        
     }

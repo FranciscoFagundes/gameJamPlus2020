@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.6800003, y: -3.46}
+  m_AnchoredPosition: {x: 5.841401, y: -3.5034}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4556194500651666757
@@ -90,10 +90,12 @@ MonoBehaviour:
   battleManager: {fileID: 0}
   npcSprite: {fileID: 6613432546245287948, guid: 9d423e525441f0345b1d5dc1f43d7de6,
     type: 3}
-  disabledSprite: {fileID: 21300000, guid: 465758be4dff717459b5e022e6841e7a, type: 3}
-  enabledSprite: {fileID: 21300000, guid: 465758be4dff717459b5e022e6841e7a, type: 3}
+  disabledSprite: {fileID: 21300000, guid: e450f968e5ce6494b9b7cefba6f7969a, type: 3}
+  enabledSprite: {fileID: 21300000, guid: 81c7918ef1b6aee45a271d43785b136a, type: 3}
   imageComponent: {fileID: 0}
   canvasObject: {fileID: 0}
   battleManagerObject: {fileID: 0}
   myPositionOnArray: 0
   active: 0
+  npcNumber: 4
+  npcCost: 3
