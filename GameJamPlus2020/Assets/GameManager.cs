@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
      public void LoadSelecionScene() {
-         SceneManager.LoadScene("SelectionScene");
+         SceneManager.LoadScene("Game");
     }
 
 }

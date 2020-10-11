@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  startHealth: 4
+  startHealth: 3
   attackForce: 0
   armor: 0
   range: 0

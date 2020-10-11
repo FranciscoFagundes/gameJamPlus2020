@@ -8,7 +8,6 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
 {
     [SerializeField] private Canvas canvas;
 
-
     private RectTransform rectTransform;
 
     private RectTransform initialPosition;
@@ -34,6 +33,10 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public int npcNumber;
 
     public int npcCost;
+
+    public AudioClip[] audios;
+
+    public AudioSource MainAudio;
 
 
     private void Awake()
@@ -62,6 +65,7 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
+        MainAudio.Play();
         
     }
 
@@ -72,15 +76,18 @@ public class DragAndDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler
             rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor / 110;
             imageComponent.sprite = npcSprite;
             rectTransform.transform.localScale = new Vector3(0.011f,0.011f,0.011f);
+            
         }
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        if(rectTransform.position.y > -1.4f && rectTransform.position.y < 1.8f  ) {
+         MainAudio.Play();
+        if(rectTransform.position.y > -2.0f && rectTransform.position.y < 2.0f && rectTransform.position.x > -5.38f && rectTransform.position.x < -2.20f) {
             battleManager.SpawnNpc(rectTransform, npcNumber, npcCost);
             battleManager.AddCardToList(myPositionOnArray);
             Destroy(this.gameObject);
+            
         }
     }
 

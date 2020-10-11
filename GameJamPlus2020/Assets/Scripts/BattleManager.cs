@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
 
     public GameObject[] npc;
-
     public float startPower;
     public float power;
 
@@ -30,19 +30,25 @@ public class BattleManager : MonoBehaviour
 
     public  Vector3 newCardPosition;
 
-    public GameObject GameOverPanel;
+    public GameObject VictoryPanel;
+
+    public GameObject DefeatPanel;
 
     public NpcStats EnemyBaseStats;
 
      public NpcStats OwnBaseStats;
 
 
+     public AudioSource MainAudio;
 
+     public float audioVolume;
 
-    // Start is called before the first frame update
     void Start()
     {
+        audioVolume = 0.1f;
         Time.timeScale = 1.0f;
+        VictoryPanel.SetActive(false);
+        DefeatPanel.SetActive(false);
         power = startPower;
         for(int x = 0; x < 4; x ++) {
             cardTable[x].gameObject.transform.position = cardPosition[x].position;
@@ -53,7 +59,6 @@ public class BattleManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
        
@@ -65,8 +70,12 @@ public class BattleManager : MonoBehaviour
 
          powerText.GetComponent<Text>().text = power.ToString("0");
 
-        if(EnemyBaseStats.health <= 0 || OwnBaseStats.health <= 0) {
-            GameOver();
+        if(EnemyBaseStats.health <= 0 ) {
+            VictoryGameOver();
+        }
+
+        if(OwnBaseStats.health <= 0) {
+            DefeatGameOver();
         }
     }
 
@@ -86,16 +95,16 @@ public class BattleManager : MonoBehaviour
         switch (myPositionOnDeck)
         {
             case 0:
-                newCardPosition = new Vector3(0f,-3.46f,0f);
+                newCardPosition = new Vector3(0.6f,-3.5f,0f);
                 break;
             case 1:
-                newCardPosition = new Vector3(2.24f,-3.46f,0f);
+                newCardPosition = new Vector3(2.4f,-3.5f,0f);
                 break;
              case 2:
-                newCardPosition = new Vector3(4.47f,-3.46f,0f);
+                newCardPosition = new Vector3(4.1f,-3.5f,0f);
                 break;
              case 3:
-                newCardPosition = new Vector3(6.68f,-3.46f,0f);
+                newCardPosition = new Vector3(5.85f,-3.5f,0f);
                 break;
             default:
                 break;
@@ -106,8 +115,31 @@ public class BattleManager : MonoBehaviour
         GameObject newCard = GameObject.Instantiate(cardDeck[(int)randomNumber],newCardPosition, Quaternion.identity, GameObject.FindGameObjectWithTag("CanvasMain").transform);
         cardTableList.Add(newCard);
     }
-    public void GameOver() {
-        GameOverPanel.SetActive(true);
+    public void VictoryGameOver() {
+        VictoryPanel.SetActive(true);
          Time.timeScale = 0f;
+    }
+
+    public void DefeatGameOver() {
+        DefeatPanel.SetActive(true);
+         Time.timeScale = 0f;
+    }
+
+    public void RestartGame() {
+        SceneManager.LoadScene("Game");
+    }
+
+    public void QuiteGame() {
+        Debug.Log("Quitando");
+        Application.Quit();
+
+    }
+
+    public void AudioMax(){
+        MainAudio.volume += audioVolume;
+    }
+
+    public void AudioMin(){
+        MainAudio.volume -= audioVolume;
     }
 }

@@ -5,8 +5,6 @@ using System;
 
 public class NpcBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     public float speed;
     public float startPositionY;
     public float finalPositionY;

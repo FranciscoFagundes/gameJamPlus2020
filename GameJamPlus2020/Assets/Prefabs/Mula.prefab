@@ -284,10 +284,10 @@ GameObject:
   - component: {fileID: 6537648975656327619}
   - component: {fileID: 6537648975656327618}
   - component: {fileID: 6537648975656327617}
-  - component: {fileID: 6537648975656327620}
   - component: {fileID: 6537648975656327621}
   - component: {fileID: 6537648975656327622}
   - component: {fileID: 6537648975656327623}
+  - component: {fileID: 3577397751987456490}
   m_Layer: 0
   m_Name: Mula
   m_TagString: Player
@@ -379,28 +379,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6537648975656327620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6537648975656327616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f12435fb986fd14d9c63754ae300e3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1.5
-  startPositionY: 0
-  finalPositionY: 0
-  goToDownBridge: 0
-  goToUPBridge: 0
-  rb: {fileID: 0}
-  isMoving: 0
-  isAttacking: 0
-  enemy: {fileID: 0}
-  enemyScript: {fileID: 0}
 --- !u!50 &6537648975656327621
 Rigidbody2D:
   serializedVersion: 4
@@ -466,6 +444,28 @@ MonoBehaviour:
   armor: 0
   range: 0
   healthBar: {fileID: 6537648975098463815}
+--- !u!114 &3577397751987456490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537648975656327616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f12435fb986fd14d9c63754ae300e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  startPositionY: 0
+  finalPositionY: 0
+  goToDownBridge: 0
+  goToUPBridge: 0
+  rb: {fileID: 0}
+  isMoving: 0
+  isAttacking: 0
+  enemy: {fileID: 0}
+  enemyScript: {fileID: 0}
 --- !u!1 &6537648975682034025
 GameObject:
   m_ObjectHideFlags: 0

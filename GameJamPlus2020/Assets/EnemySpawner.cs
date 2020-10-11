@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public float currentTime;
     public float timeForRespawn;
+    public int enemyNumber;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
     }
 
     void SpawnEnemy() {
-        Instantiate(enemies[0], transform.position, Quaternion.identity);
+        enemyNumber = Random.Range(0,10);
+        Instantiate(enemies[enemyNumber], transform.position, Quaternion.identity);
     }
 }
